@@ -1,6 +1,6 @@
 <h1>Listing movies</h1>
 
-<table>
+<table class="table table-bordered">
   <thead>
     <tr>
       <th>Title</th>
@@ -18,9 +18,10 @@
         <td><%= movie.release_year %></td>
         <td><%= movie.price %></td>
         <td><%= movie.description %></td>
-        <td><%= link_to 'Show', movie %></td>
-        <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
-        <td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', movie, class: 'btn btn-primary btn-xs' %></td>
+        <td><%= link_to 'Edit', edit_movie_path(movie), class: 'btn btn-info 
+btn-xs' %></td>
+        <td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +29,6 @@
 
 <br>
 
-<%= link_to 'New Movie', new_movie_path %>
+<%= link_to new_movie_path, class: 'btn btn-success' do %>
+  <i class="glyphicon glyphicon-plus"></i> Add Movie
+<% end %>
